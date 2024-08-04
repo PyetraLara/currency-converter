@@ -1,1 +1,4 @@
-<a href='https://pyetralara.github.io/currency-converter/'>link
+<h1>currency converter</h1>
+
+<p>this project is a simple currency converter </p>
+<a href='https://pyetralara.github.io/currency-converter/'>access here<a>
