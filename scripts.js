@@ -6,7 +6,7 @@ const CurrencyDolar = document.querySelector('.currency-value-dolar')
 const dolarToday = 5.62
 const euroToday = 6.08
 
-PressBotton.addEventListener("click", function () {
+function buttonClick() {
         const InputCurrency = document.querySelector('.input-currency').value
         CurrencyReal.innerHTML = InputCurrency
 
@@ -28,12 +28,11 @@ PressBotton.addEventListener("click", function () {
                         currency: 'EUR'
                 }).format(InputCurrency / euroToday)
         }
-})
+}
 
 Options.addEventListener('change', function(){
         const currencyImg = document.querySelector('.image')
         const dolarName = document.querySelector('.currency-dolar')
-
         const InputCurrency = document.querySelector('.input-currency').value
         CurrencyReal.innerHTML = InputCurrency
 
@@ -45,23 +44,13 @@ Options.addEventListener('change', function(){
         if(Options.value == 'euro'){
                 currencyImg.src = './assets/euro.currency.png'
                 dolarName.innerHTML = 'Euro'
-
-                CurrencyDolar.innerHTML = new Intl.NumberFormat('de-DE', {
-                        style: 'currency',
-                        currency: 'EUR'
-                }).format(InputCurrency / euroToday)
-                
+                buttonClick()
         }
 
         if(Options.value == 'dolar'){
                 currencyImg.src = './assets/estados-unidos (1) 1.png'
                 dolarName.innerHTML = 'American dollar'
-
-                if(Options.value == 'dolar'){
-                        CurrencyDolar.innerHTML = new Intl.NumberFormat('en-US', {
-                                style: 'currency',
-                                currency: 'USD'
-                        }).format(InputCurrency / dolarToday)
+                buttonClick()
                 }
         }       
-})
+)
